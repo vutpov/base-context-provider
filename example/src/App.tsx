@@ -1,10 +1,11 @@
 import React from 'react'
-
-import { ExampleComponent } from 'base-context-provider'
-import 'base-context-provider/dist/index.css'
+import {wrapTestProvider} from './TestContext'
+import Button from './Button'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <div>hello
+    <Button/>
+  </div>
 }
 
-export default App
+export default wrapTestProvider(App)
