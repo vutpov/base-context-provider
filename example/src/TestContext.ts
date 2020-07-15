@@ -28,6 +28,7 @@ export const useTestContext = baseUseContext(Context)
 
 export const withTestContext = baseWithContext(Context, 'testContextProps')
 
+// @ts-ignore
 export const wrapTestProvider = baseContextWrap(TestContextProvider)
 
 export default TestContextProvider

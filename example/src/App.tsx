@@ -8,4 +8,6 @@ const App = () => {
   </div>
 }
 
-export default wrapTestProvider(App)
+export default wrapTestProvider(App, {props: {
+  chambers: 70
+}})

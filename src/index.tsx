@@ -27,14 +27,19 @@ class BaseContextProvider<PROPS = {}, STATE = {}> extends React.Component<
     const contextReturn = this.getContextReturnValue()
     const Context = this.getContext()
     const { children } = this.props
-
     return <Context.Provider value={contextReturn}>{children}</Context.Provider>
   }
 }
 
+interface ContextWrapConfig {
+  props: {
+    [index: string]: any
+  }
+}
+
 export const baseContextWrap = (Provider: any) => {
-  return (Component: any) => (props: any) => (
-    <Provider children={<Component {...props} />} />
+  return (Component: any, config?: ContextWrapConfig) => (props: any) => (
+    <Provider {...config} children={<Component {...props} />} />
   )
 }
 
