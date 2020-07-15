@@ -11,7 +11,10 @@ const BaseContext = React.createContext({})
  * @constructor
  *
  */
-class BaseContextProvider<PROPS, STATE> extends React.Component<PROPS, STATE> {
+class BaseContextProvider<PROPS = {}, STATE = {}> extends React.Component<
+  PROPS,
+  STATE
+> {
   getContextReturnValue() {
     return {}
   }
