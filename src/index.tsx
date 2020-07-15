@@ -31,13 +31,14 @@ class BaseContextProvider<PROPS = {}, STATE = {}> extends React.Component<
   }
 }
 
+// @ts-ignore
 interface ContextWrapConfig {
   props: {
     [index: string]: any
   }
 }
 
-export const baseContextWrap = (Provider: any) => {
+export const baseContextWrap : any = (Provider: any) => {
   return (Component: any, config?: ContextWrapConfig) => (props: any) => (
     <Provider {...config} children={<Component {...props} />} />
   )
